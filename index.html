@@ -1,36 +1,149 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My First Website</title>
-  <style>
-    body {
-      background: #121827;
-      color: white;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 80px 20px;
-    }
-    h1 { color: #60a5fa; }
-    p { font-size: 18px; }
-    button {
-      background: #2563eb;
-      color: white;
-      border: none;
-      border-radius: 10px;
-      padding: 15px 25px;
-      cursor: pointer;
-    }
-  </style>
+  <meta name="theme-color" content="#070810">
+  <meta name="description" content="Leo Leo Hub — یک تجربه تازه برای تماشای ویدیو. نسخه آزمایشی با انیمیشن و طراحی سه‌بعدی.">
+  <title>Leo Leo Hub | کشف دنیای ویدیو</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g'%3E%3Cstop stop-color='%23ff416c'/%3E%3Cstop offset='1' stop-color='%239b5cff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='18' fill='url(%23g)'/%3E%3Cpath d='M25 18v28l24-14z' fill='white'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
 </head>
 <body>
-  <h1>Welcome to My First Website!</h1>
-  <p>Hello! I am learning web development.</p>
-  <p>This website is created using GitHub.</p>
-  <button onclick="alert('Hello, World!')">
-    Click Me
-  </button>
+  <!-- Self-contained SVG symbols keep the site usable without an icon library. -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m8 5 12 7-12 7V5z"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 11 9-8 9 8v9a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></symbol>
+    <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15.7 8.3-2.2 5.2-5.2 2.2 2.2-5.2z"/></symbol>
+    <symbol id="i-fire" viewBox="0 0 24 24"><path d="M12 22c-5 0-8-3.5-8-8 0-3 2-5 4-7 0 3 1 4 2 5 1-5 5-8 5-10 4 3 5 7 5 11 0 5-3 9-8 9z"/><path d="M12 22c-2.5 0-4-2-4-4 0-2 1-3 3-5 0 2 1 3 2 3 1-2 2-3 2-3 1 2 1 3 1 5 0 2-1.5 4-4 4z"/></symbol>
+    <symbol id="i-bookmark" viewBox="0 0 24 24"><path d="M5 4h14v17l-7-5-7 5z"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="4"/><path d="M2 21v-2a7 7 0 0 1 14 0v2M17 4a4 4 0 0 1 0 8m1 3c2.7.5 4 2 4 5v1"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 8-3 8-3 10h18c0-2-3-2-3-10M10 21h4"/></symbol>
+    <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V3m-5 5 5-5 5 5M4 15v5h16v-5"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 5.7a5.2 5.2 0 0 0-7.3 0L12 7.2l-1.5-1.5a5.2 5.2 0 0 0-7.3 7.4L12 22l8.8-8.9a5.2 5.2 0 0 0 0-7.4z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M5 5 19 19M19 5 5 19"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="m15 6-6 6 6 6M9 12h12"/></symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="m12 2 2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5z"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c-6 6-6 12 0 18M12 3c6 6 6 12 0 18"/></symbol>
+    <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 22h8m-4-4v4"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 2 9 4v6c0 6-3 9-9 10-6-1-9-4-9-10V6z"/><path d="m8 12 3 3 5-6"/></symbol>
+  </svg>
+
+  <div class="ambient one"></div><div class="ambient two"></div>
+  <header class="topbar">
+    <button id="mobile-menu" class="icon-btn mobile-menu" type="button" aria-label="باز کردن منو"><svg class="icon"><use href="#i-menu"></use></svg></button>
+    <a class="brand" href="#home" data-nav="home" aria-label="Leo Leo Hub — صفحه اصلی">
+      <span class="brand-icon"><svg class="icon"><use href="#i-play"></use></svg></span>
+      <span><span class="brand-name">LEO <span>LEO</span> HUB</span><small class="tagline">WATCH • DISCOVER • CREATE</small></span>
+    </a>
+    <div class="top-search">
+      <svg class="icon"><use href="#i-search"></use></svg>
+      <input id="search-input" type="search" placeholder="جست‌وجوی ویدیو، کانال و موضوع..." autocomplete="off" aria-label="جست‌وجوی ویدیو">
+    </div>
+    <div class="top-actions">
+      <button class="icon-btn mobile-search" id="mobile-search" type="button" aria-label="جست‌وجو" style="display:none"><svg class="icon"><use href="#i-search"></use></svg></button>
+      <button class="icon-btn" id="notifications-btn" type="button" aria-label="اعلان‌ها"><svg class="icon"><use href="#i-bell"></use></svg></button>
+      <button class="upload-btn" id="upload-btn" type="button"><svg class="icon"><use href="#i-upload"></use></svg><span>آپلود ویدیو</span></button>
+      <div class="avatar" aria-label="نمایه آزمایشی">L</div>
+    </div>
+  </header>
+
+  <div class="layout" id="home">
+    <aside class="sidebar" id="sidebar" aria-label="منوی اصلی">
+      <p class="side-label">منوی اصلی</p>
+      <button type="button" class="nav-item active" data-nav="home"><svg class="icon"><use href="#i-home"></use></svg> خانه</button>
+      <button type="button" class="nav-item" data-nav="explore"><svg class="icon"><use href="#i-compass"></use></svg> کشف ویدیوها</button>
+      <button type="button" class="nav-item" data-nav="trending"><svg class="icon"><use href="#i-fire"></use></svg> پرطرفدارها</button>
+      <hr>
+      <p class="side-label">کتابخانه من</p>
+      <button type="button" class="nav-item" data-nav="subscriptions"><svg class="icon"><use href="#i-users"></use></svg> دنبال‌شده‌ها</button>
+      <button type="button" class="nav-item" data-nav="saved"><svg class="icon"><use href="#i-bookmark"></use></svg> ذخیره‌شده‌ها</button>
+      <button type="button" class="nav-item" data-nav="history"><svg class="icon"><use href="#i-clock"></use></svg> تاریخچه تماشا</button>
+      <hr>
+      <p class="side-label">درباره این نسخه</p>
+      <div class="side-footer">LEO LEO HUB — DEMO V1.0<br>طراحی آزمایشی برای GitHub Pages<br>آپلود و حساب کاربری واقعی در آینده اضافه می‌شوند.</div>
+    </aside>
+
+    <main class="main">
+      <section class="hero" aria-label="معرفی Leo Leo Hub">
+        <div class="hero-content">
+          <div class="eyebrow"><span class="eyebrow-dot"></span><svg class="icon" style="width:16px;height:16px"><use href="#i-sparkle"></use></svg> به دنیای جدید ویدیو خوش آمدی</div>
+          <h1>هر ویدیو، <span class="gradient-text">یک دنیای تازه.</span></h1>
+          <p>کشف کن، تماشا کن و الهام بگیر. این نسخه اول Leo Leo Hub است؛ تجربه‌ای مدرن با طراحی سه‌بعدی، حرکت‌های نرم و ویدیوهای آزمایشی.</p>
+          <div class="hero-buttons">
+            <button class="primary-btn" type="button" id="featured-btn"><svg class="icon"><use href="#i-play"></use></svg> تماشای ویدیوی ویژه</button>
+            <button class="ghost-btn" type="button" id="browse-btn"><svg class="icon"><use href="#i-compass"></use></svg> کشف ویدیوها</button>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="hero-frame">
+            <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=850&q=85" alt="">
+            <div class="hero-play"><span class="play-circle"><svg class="icon"><use href="#i-play"></use></svg></span></div>
+          </div>
+          <div class="floating-label top"><strong>3D EXPERIENCE</strong><small>Interactive design</small></div>
+          <div class="floating-label bottom"><strong>LEO LEO ✦</strong><small>Explore more. Feel more.</small></div>
+        </div>
+      </section>
+
+      <div class="ticker" aria-label="ویژگی‌ها">
+        <span><svg class="icon"><use href="#i-sparkle"></use></svg><strong>3D Motion</strong> افکت‌های تعاملی</span>
+        <span><svg class="icon"><use href="#i-monitor"></use></svg> سازگار با موبایل و کمپیوتر</span>
+        <span><svg class="icon"><use href="#i-globe"></use></svg> محیط فارسی</span>
+        <span><svg class="icon"><use href="#i-shield"></use></svg> نسخه آزمایشی رایگان</span>
+      </div>
+
+      <section id="explore-section" aria-labelledby="section-title">
+        <div class="section-head">
+          <div><h2 id="section-title">ویدیوهای پیشنهادی</h2><p id="section-subtitle">ویدیوهای نمونه را ببین و محیط سایت را تجربه کن</p></div>
+          <button id="show-all" class="small-link" type="button">نمایش همه <svg class="icon"><use href="#i-arrow"></use></svg></button>
+        </div>
+        <div id="categories" class="categories" aria-label="دسته‌بندی ویدیوها"></div>
+        <div class="section-head" style="margin:0 0 19px"><span id="video-count" style="color:#8d8da2;font-size:12px">ویدیوهای آزمایشی</span></div>
+        <div class="video-grid" id="video-grid" aria-live="polite"></div>
+        <div class="empty" id="empty"><svg class="icon"><use href="#i-search"></use></svg><h3>ویدیویی پیدا نشد</h3><p id="empty-text">جست‌وجوی دیگری امتحان کن.</p></div>
+      </section>
+
+      <footer class="footer">
+        <span>© 2026 Leo Leo Hub • ساخته‌شده با علاقه به دنیای تکنالوژی</span>
+        <span>نسخه نمایشی • ویدیوها و آمار ساختگی هستند • امکانات حساب و آپلود واقعی هنوز فعال نیستند</span>
+      </footer>
+    </main>
+  </div>
+
+  <div class="overlay" id="player-overlay" role="dialog" aria-modal="true" aria-label="پخش ویدیو" aria-hidden="true">
+    <div class="modal">
+      <div class="modal-head"><h3>Leo Leo Hub <span class="gradient-text">/ Player</span></h3><button type="button" id="close-player" class="close-btn" aria-label="بستن پخش‌کننده"><svg class="icon"><use href="#i-x"></use></svg></button></div>
+      <div class="player-wrap"><video id="video-player" controls playsinline preload="none">مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.</video></div>
+      <div class="player-meta">
+        <h2 id="player-title"></h2>
+        <p id="player-by"></p>
+        <p id="player-error" hidden>این ویدیوی آزمایشی بارگذاری نشد. اتصال اینترنت و دسترسی به سرویس ویدیویی را بررسی کن.</p>
+        <div class="player-controls">
+          <button id="like-btn" class="reaction" type="button"></button>
+          <button id="save-btn" class="reaction" type="button"></button>
+          <button id="subscribe-btn" class="reaction" type="button"></button>
+        </div>
+        <p style="font-size:11px">این ویدیو برای نمایش قابلیت پخش استفاده شده است. ذخیره‌ها و پسندیدن‌ها فقط در همین مرورگر نگهداری می‌شوند.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="overlay" id="upload-overlay" role="dialog" aria-modal="true" aria-label="آپلود ویدیو" aria-hidden="true">
+    <div class="modal" style="max-width:520px">
+      <div class="modal-head"><h3>آپلود ویدیو</h3><button id="close-upload" class="close-btn" type="button" aria-label="بستن"><svg class="icon"><use href="#i-x"></use></svg></button></div>
+      <div class="upload-inner">
+        <div class="upload-illustration"><svg class="icon"><use href="#i-upload"></use></svg></div>
+        <h2>به‌زودی در Leo Leo Hub</h2>
+        <p>در این نسخه می‌توانی ویدیوها را تماشا و جست‌وجو کنی. برای آپلود واقعی ویدیو، ساخت حساب کاربری و نگهداری ویدیوها به سرویس سرور و دیتابیس نیاز داریم. این بخش هنوز فعال نیست.</p>
+        <button type="button" class="primary-btn" onclick="document.getElementById('close-upload').click()">متوجه شدم</button>
+      </div>
+    </div>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 </body>
 </html>
